@@ -1,0 +1,14 @@
+#In /notesapp/settings.py: 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+#In Dokerfile:
+CMD ["sh", "-c", "python manage.py migrate && gunicorn --bind 0.0.0.0:8000 notesapp.wsgi:application"]
+
+#To remove old images and containers:
+docker rm -f $(docker ps -aq)
+docker rmi notes-app
