@@ -30,7 +30,7 @@ required_restarts() {
 
 deploy() {
 	
-
+	cd django-notes-app-preTested
 	docker build -t notes-app . #creating docker image using docker file
 	docker run -dp 8000:8000 notes-app:latest # running the docker image
 
@@ -40,7 +40,7 @@ echo "-------------Deployment started----------------------"
 
 #Error handling
 if ! code_clone; then
-	echo "the code dir already exists"
+	echo "Erro: Please check the django-notes-app-preTested gihub repo Issue while clonning"
 	cd django-notes-app
 fi
 
