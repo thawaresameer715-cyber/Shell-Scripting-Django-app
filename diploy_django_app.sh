@@ -9,7 +9,7 @@ task
 code_clone() {
 
 	echo "Clonnig the fjango app"
-	git clone https://github.com/LondheShubham153/django-notes-app.git
+	git clone https://github.com/thawaresameer715-cyber/django-notes-app-preTested.git
 }
 
 install_requirements() {
